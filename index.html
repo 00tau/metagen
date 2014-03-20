@@ -37,26 +37,47 @@
 <h2>
 <a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h2>
 
-<p>This is an R-package for inference in the random effects meta regression
-model.  The purpose of the package is two fold.  On the one hand, it
-allows the user to run different inferential methods on any given data
-that follow a meta analysis or meta regression model.  The output is a
-neat summary of all kinds of different methods, many of which are commonly used in the meta analysis or meta regression context and some which are not as common, too. The big feature are two methods
-based on generalised inference principles.</p>
+<p>This is an R-package for inference in the random effects meta regression model.
+The purpose of the package is two fold. On the one hand, it allows the user to
+run different inferential methods on any given data that follow a meta analysis
+or meta regression model. The output is a neat summary of all kinds of
+different methods, many of which are commonly used in the meta analysis or meta
+regression context and some which are not as common, too. The big feature are
+two methods based on generalised inference principles.</p>
 
-<p>On the other hand, the package allows to run rather sophisticated large
-scale computer experiments that evaluate the performance of all
-implemented methods with respect to coverage probability (and, well,
-average length).  The idea is to use the above procedures to trace out
-the possible magnitude of the unknown parameters of the model, and, then, to use the
-possibility of running computer experiments in a possible sub-space of the
-parameter space to get an idea of which method yield, in fact, trustworthy results.</p>
+<p>On the other hand, the package allows to run rather sophisticated large scale
+computer experiments that evaluate the performance of all implemented methods
+with respect to coverage probability (and, well, average length). The idea is
+to use the above procedures to trace out the possible magnitude of the unknown
+parameters of the model, and, then, to use the possibility of running computer
+experiments in a possible sub-space of the parameter space to get an idea of
+which method yield, in fact, trustworthy results.</p>
 
 <h2>
-<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+<a name="installation-from-cran" class="anchor" href="#installation-from-cran"><span class="octicon octicon-link"></span></a>Installation from CRAN</h2>
 
-<p>You may use the following magic to build and install the package on your
-system:</p>
+<p>The easiest way to install the package in a running R environment is:</p>
+
+<pre><code>install.packages("metagen")
+library("metagen")
+</code></pre>
+
+<h2>
+<a name="installation-using-devtools-github-functionality" class="anchor" href="#installation-using-devtools-github-functionality"><span class="octicon octicon-link"></span></a>Installation using devtools GitHub-functionality</h2>
+
+<p>If you have <code>devtools</code> installed on your system, you can install the latest
+up-to-date version of <code>metagen</code> directly from within R.</p>
+
+<pre><code>install.package("devtools")
+devtools::install_github("metagen")
+library("metagen")
+</code></pre>
+
+<h2>
+<a name="installation-manually-from-github" class="anchor" href="#installation-manually-from-github"><span class="octicon octicon-link"></span></a>Installation manually from GitHub</h2>
+
+<p>After cloning the repository, you may use the following magic in the build
+directory to build and install the package on your system:</p>
 
 <pre><code>make package
 make install
@@ -64,7 +85,7 @@ make install
 
 <p>Then open up an R-session and type:</p>
 
-<pre><code>library(metagen)
+<pre><code>library("metagen")
 </code></pre>
 
 <p>And you are good to go.</p>
