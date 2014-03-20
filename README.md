@@ -20,11 +20,33 @@ parameters of the model, and, then, to use the possibility of running computer
 experiments in a possible sub-space of the parameter space to get an idea of
 which method yield, in fact, trustworthy results.
 
-Installation
-------------
+Installation from CRAN
+----------------------
 
-You may use the following magic to build and install the package on your
-system:
+The easiest way to install the package in a running R environment is:
+
+```
+install.packages("metagen")
+library("metagen")
+```
+
+Installation using devtools GitHub-functionality
+--------------------------------------------------
+
+If you have `devtools` installed on your system, you can install the latest
+up-to-date version of `metagen` directly from within R.
+
+```
+install.package("devtools")
+devtools::install_github("metagen")
+library("metagen")
+```
+
+Installation manually from GitHub
+---------------------------------
+
+After cloning the repository, you may use the following magic in the build
+directory to build and install the package on your system:
 
 ```
 make package
@@ -34,7 +56,7 @@ make install
 Then open up an R-session and type:
 
 ```
-library(metagen)
+library("metagen")
 ```
 
 And you are good to go.
