@@ -3,3 +3,12 @@
 
 # Example code in package build process
 *-Ex.R
+
+# Results of the build process
+pkg/
+pkg.Rcheck/
+metagen_*.tar.gz
+
+# Files
+*.swp
+*.pdf
