@@ -6,7 +6,7 @@ Description: Provides methods for making inference in the random effects meta re
 Author: Thomas W. D. Möbius <kontakt@thomasmoebius.de>
 Maintainer: Thomas W. D. Möbius <kontakt@thomasmoebius.de>
 URL: http://00tau.github.io/metagen/
-License: GPL-3 + file LICENSE
+License: GPL-3
 Imports: MASS, lhs, plyr, BBmisc, ParamHelpers, BatchJobs, BatchExperiments, ggplot2, metafor
 LazyData: yes
 ByteCompile: yes
