@@ -37,7 +37,7 @@ If you have `devtools` installed on your system, you can install the latest
 up-to-date version of `metagen` directly from within R.
 
 ```
-install.package("devtools")
+install.packages("devtools")
 devtools::install_github("metagen")
 library("metagen")
 ```
