@@ -272,10 +272,7 @@ yvec <- function(study) {
 #' yvec(test)
 #' dvec(test)
 dvec <- function(study) {
-    return(1/study[,1]
-           + 1/study[,3]
-           - 1/(study[,1] + study[,2])
-           - 1/(study[,3]+ study[,4]))
+    return((1/study[,1]) - (1/(study[,1] + study[,2])) + (1/study[,3]) - (1/(study[,3]+ study[,4])))
 }
 
 #' Data generation: Gaussian-Gaussian model

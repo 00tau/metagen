@@ -515,7 +515,7 @@ hEstimates <- function (  y    # study responses
     tauREML <- data.frame(type="restricted maximum-likelihood"
                           , h=tryFunc(rma(y, d, mods=x, method="REML"
                                           , intercept=FALSE)$tau2))
-    tauMP <- data.frame(type="Mandel-Paul",
+    tauMP <- data.frame(type="Mandel-Paule",
                         h=pfunc(y=y,d=d,x=x)(dim(x)[1] - dim(x)[2]))
     return(rbind(tauHE,tauDL,tauSJ,tauMP,tauML,tauREML))
 }
