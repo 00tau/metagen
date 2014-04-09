@@ -67,10 +67,8 @@ boxByConfidence <- function(res) {
              + geom_boxplot(aes(fill=type))
              + geom_hline(yintercept=0, size=.42, linetype=4)
              + coord_flip()
-             + scale_fill_discrete(expression(paste(
-                   "Type of method\nused for\ninterval estimation")))
-             + scale_x_discrete(
-                   expression(paste("Aspired confidence level")))
+             + scale_fill_discrete(expression("Type of method\nused for\ninterval estimation"))
+             + scale_x_discrete(expression(paste("Aspired confidence level")))
              + ggtitle(expression("Box plots of confidence-coverage"))
              + theme(  legend.position="bottom"
                      , axis.text = element_text(colour = "black"))
@@ -88,10 +86,8 @@ boxByType <- function(res) {
              + geom_boxplot(aes(fill=factor(confidence, ordered=T)))
              + geom_hline(yintercept=0, size=.42, linetype=4)
              + coord_flip()
-             + scale_x_discrete(expression(paste(
-                             "Method used for interval estimation")))
-             + scale_fill_discrete(expression(paste(
-                             "Aspired\nconfidence\nlevel")))
+             + scale_x_discrete(expression(paste("Method used for interval estimation")))
+             + scale_fill_discrete(expression(paste("Aspired\nconfidence\nlevel")))
              + ggtitle(expression("Box plots of confidence-coverage"))
              + theme(  legend.position="bottom"
                      , axis.text = element_text(colour = "black"))
@@ -105,13 +101,12 @@ boxByType <- function(res) {
 #' @return A plot object.
 #' @export
 boxByMethod <- function(res) {
-    boxp <- (  ggplot(res, aes(method, confidence-coverage))
-             + geom_boxplot(aes(fill=type))
+    boxp <- (  ggplot(res, aes(type, confidence-coverage))
+             + geom_boxplot(aes(fill=method))
              + geom_hline(yintercept=0, size=.42, linetype=4)
              + coord_flip()
-             + scale_x_discrete(expression(paste(
-                             "Method used for interval estimation")))
-             + scale_fill_discrete(expression(paste("Type")))
+             + scale_x_discrete(expression("Underlying type used for interval estimation"))
+             + scale_fill_discrete(expression("Type of interval estimate"))
              + ggtitle(expression("Box plots of confidence-coverage"))
              + theme(  legend.position="bottom"
                      , axis.text = element_text(colour = "black"))
@@ -133,14 +128,12 @@ sctVersusH <- function(res) {
     res$colour <- turn2perc(res$confidence)
     p <- (  ggplot(res, aes(h, confidence-coverage))
           + geom_point(aes(colour=colour), alpha=.729)
-          + scale_colour_discrete(expression(strwrap("Aspired confidence
-                                                     level")))
+          + scale_colour_discrete(expression("Aspired confidence level"))
           + geom_hline(yintercept=0, size=.42, linetype=3)
           + scale_x_continuous(expression(tau))
           + scale_y_continuous(expression("confidence - coverage"))
           + stat_smooth(method="lm", colour="black")
-          + ggtitle(expression(strwrap("Scatter plot between
-                                       heterogeneity and coverage")))
+          + ggtitle(expression("Scatter plot between heterogeneity and coverage"))
           + theme(  legend.position="bottom"
                   , axis.text = element_text(colour = "black"))
           )
@@ -163,8 +156,7 @@ sctVersusC <- function(res) {
           + scale_x_continuous(expression(tau))
           + scale_y_continuous(expression("confidence - coverage"))
           + stat_smooth(method="lm", colour="black") # aes(colour=type))
-          + ggtitle(expression(strwrap("Scatter plot between
-                                       heterogeneity and coverage")))
+          + ggtitle(expression("Scatter plot between heterogeneity and coverage"))
           + theme(  legend.position="bottom"
                   , axis.text = element_text(colour = "black"))
           )
@@ -256,12 +248,9 @@ lenBoxByType <- function(res) {
     lenp <- (  ggplot(res, aes(factor(confidence), width))
              + geom_boxplot(aes(fill=type))
              + coord_flip()
-             + scale_x_discrete(name="Aspired confidence level")
-             + scale_y_continuous(name=expression(strwrap("Estimated
-                                                          mean interval
-                                                          width")))
-             + scale_fill_discrete(expression(paste(
-                   "Type of method\nused for\ninterval estimation")))
+             + scale_x_discrete(name=expression("Aspired confidence level"))
+             + scale_y_continuous(name=expression("Estimated mean interval width"))
+             + scale_fill_discrete(expression("Type of method\nused for\ninterval estimation"))
              + ggtitle(expression("Box plots of mean interval width"))
              + theme(  legend.position="bottom"
                      , axis.text = element_text(colour = "black"))
@@ -278,12 +267,9 @@ lenBoxByMethod <- function(res) {
     lenp <- (  ggplot(res, aes(factor(confidence), width))
              + geom_boxplot(aes(fill=method))
              + coord_flip()
-             + scale_x_discrete(name="Aspired confidence level")
-             + scale_y_continuous(name=expression(strwrap("Estimated
-                                                          mean interval
-                                                          width")))
-             + scale_fill_discrete(expression(paste(
-                   "Type of method\nused for\ninterval estimation")))
+             + scale_x_discrete(name=expression("Aspired confidence level"))
+             + scale_y_continuous(name=expression("Estimated mean interval width"))
+             + scale_fill_discrete(expression("Type of method\nused for\ninterval estimation"))
              + ggtitle(expression("Box plots of mean interval width"))
              + theme(  legend.position="bottom"
                      , axis.text = element_text(colour = "black"))
@@ -304,11 +290,9 @@ lenBoxByMethod <- function(res) {
 lenDenByType <- function(res) {
     lenp <- (  ggplot(res, aes(x=width))
              + geom_density(aes(fill=type), alpha=.3)
-             + scale_x_continuous(name="Mean interval width")
-             + scale_y_continuous(name="Density")
-             + scale_fill_discrete(expression(paste( "Type of "
-                                                    , tau
-                                                    , "-estimator")))
+             + scale_x_continuous(name=expression("Mean interval width"))
+             + scale_y_continuous(name=expression("Density"))
+             + scale_fill_discrete(expression(paste( "Type of ", tau, "-estimator")))
              + theme(  legend.position="bottom"
                      , axis.text = element_text(colour = "black"))
              )
@@ -324,10 +308,9 @@ lenDenByType <- function(res) {
 lenDenByMethod <- function(res) {
     lenp <- (  ggplot(res, aes(x=width))
              + geom_density(aes(fill=method), alpha=.3)
-             + scale_x_continuous(name="Mean interval width")
-             + scale_y_continuous(name="Density")
-             + scale_fill_discrete(expression(paste(
-                            "Method used for\ninterval estimation")))
+             + scale_x_continuous(name=expression("Mean interval width"))
+             + scale_y_continuous(name=expression("Density"))
+             + scale_fill_discrete(expression(paste("Method used for\ninterval estimation")))
              + theme(  legend.position="bottom"
                      , axis.text = element_text(colour = "black"))
              )
