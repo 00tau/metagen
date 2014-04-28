@@ -94,9 +94,7 @@ sctMSE <- function(res, ...) {
           + scale_colour_discrete(expression(paste(  "Type of "
                                                    , tau
                                                    , "-estimator")))
-          + scale_linetype_discrete(expression(strwrap("Estimated
-                                                       regression
-                                                       line")))
+          + scale_linetype_discrete(expression("Estimated regression line"))
           + stat_smooth(  method="lm", se=FALSE, colour="black"
                         , aes(linetype=type))
           + theme(axis.text = element_text(colour = "black"))
@@ -122,9 +120,7 @@ sctBias <- function(res, ...) {
           + scale_colour_discrete(expression(paste("Type of "
                                                    , tau
                                                    , "-estimator")))
-          + scale_linetype_discrete(expression(strwrap("Estimated
-                                                       regression
-                                                       line")))
+          + scale_linetype_discrete(expression("Estimated regression line"))
           + stat_smooth(method="lm", se=FALSE, colour="black",
                         aes(linetype=type))
           + theme(axis.text = element_text(colour = "black"))
@@ -148,9 +144,7 @@ sctSD <- function(res, ...) {
                                                   "-estimator")))
           + scale_colour_discrete(expression(paste("Type of ", tau,
                                                    "-estimator")))
-          + scale_linetype_discrete(expression(strwrap("Estimated
-                                                       regression
-                                                       line")))
+          + scale_linetype_discrete(expression("Estimated regression line"))
           + stat_smooth(method="lm", se=FALSE, colour="black",
                         aes(linetype=type))
           + theme(axis.text = element_text(colour = "black"))
