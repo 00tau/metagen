@@ -43,8 +43,8 @@ bcgVaccineData <- function (sgnf=0.05) {
     tmp_size    = tmp_size_t + tmp_size_c
     tmp_balance = (tmp_size_t - tmp_size_c) / tmp_size
 
-    bcg_dat <- data.frame(  reference= paste(dat$author, dat$year,
-                                             sep=", ")  # author
+    bcg_dat <- data.frame(
+      reference= paste(paste0(dat$author, "."), dat$year, sep=", ")
     , x=         dat$ablat
     , size=      tmp_size
     , balance=   tmp_balance
