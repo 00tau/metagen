@@ -88,12 +88,8 @@ sctMSE <- function(res, ...) {
           + geom_hline(yintercept=0, size=.3, linetype=4)
           + scale_x_continuous(expression(tau))
           + scale_y_continuous(expression("Mean squared error"), ...)
-          + scale_shape_discrete(expression(paste(  "Type of "
-                                                  , tau
-                                                  , "-estimator")))
-          + scale_colour_discrete(expression(paste(  "Type of "
-                                                   , tau
-                                                   , "-estimator")))
+          + scale_shape_discrete(expression(paste("Type of ", tau, "-estimator")))
+          + scale_colour_discrete(expression(paste("Type of ", tau, "-estimator")))
           + scale_linetype_discrete(expression("Estimated regression line"))
           + stat_smooth(  method="lm", se=FALSE, colour="black"
                         , aes(linetype=type))
@@ -114,12 +110,8 @@ sctBias <- function(res, ...) {
           + geom_hline(yintercept=0, size=.3, linetype=4)
           + scale_x_continuous(expression(tau))
           + scale_y_continuous(expression("Bias"), ...)
-          + scale_shape_discrete(expression(paste("Type of "
-                                                  , tau
-                                                  , "-estimator")))
-          + scale_colour_discrete(expression(paste("Type of "
-                                                   , tau
-                                                   , "-estimator")))
+          + scale_shape_discrete(expression(paste("Type of ", tau, "-estimator")))
+          + scale_colour_discrete(expression(paste("Type of ", tau, "-estimator")))
           + scale_linetype_discrete(expression("Estimated regression line"))
           + stat_smooth(method="lm", se=FALSE, colour="black",
                         aes(linetype=type))

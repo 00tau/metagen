@@ -285,7 +285,7 @@ lenDenByType <- function(res) {
              + geom_density(aes(fill=type), alpha=.3)
              + scale_x_continuous(name=expression("Mean interval width"))
              + scale_y_continuous(name=expression("Density"))
-             + scale_fill_discrete(expression(paste( "Type of ", tau, "-estimator")))
+             + scale_fill_discrete(expression(paste("Type of ", tau, "-estimator")))
              + theme(  legend.position="bottom"
                      , axis.text = element_text(colour = "black"))
              )
