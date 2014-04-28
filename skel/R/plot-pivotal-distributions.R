@@ -138,7 +138,6 @@ plotDensityH <- function (pivh) {
                                                  , "heteroscedasticity"
                                                  , "has been"))
            , palette="Spectral")
-           + ggtitle(expression("Density estimates of generalised pivots for the heterogeneity"))
            )
 }
 
@@ -169,7 +168,6 @@ plotDensityH2 <- function (pivh) {
                                  )
            + xlab(expression(tau))
            + facet_wrap(~type, ncol=1)
-           + ggtitle(expression("Density estimates of a generalised pivot for the heterogeneity"))
            )
 }
 
@@ -200,7 +198,6 @@ plotDensityIntercept <- function (pivr) {
            + xlab(expression("intercept"))
            + scale_fill_brewer(palette="Spectral")
            + facet_grid(~type)
-           + ggtitle(expression("Density estimates of generalised pivots for the regression intercept"))
            )
 }
 
@@ -232,7 +229,6 @@ plotDensitySlope <- function (pivr) {
            + scale_fill_brewer(  expression("using")
                                , palette="Spectral")
            + facet_grid(~type)
-           + ggtitle(expression("Density estimates of generalised pivots for the regression slope"))
            )
 }
 
@@ -266,7 +262,6 @@ plotDensityIntercept2 <- function (pivr) {
                                                  , "has been"))
                                , palette="Spectral")
            + facet_grid(~via)
-           + ggtitle(expression("Density estimates of generalised pivots for the regression slope"))
            )
 }
 
@@ -300,8 +295,5 @@ plotDensitySlope2 <- function (pivr) {
                                                  , "has been"))
                                , palette="Spectral")
            + facet_grid(~via)
-           + ggtitle(expression("Density estimates of generalised pivots for the regression slope"))
            )
 }
-
-globalVariables()

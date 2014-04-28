@@ -69,7 +69,6 @@ boxByConfidence <- function(res) {
              + coord_flip()
              + scale_fill_discrete(expression("Type of method\nused for\ninterval estimation"))
              + scale_x_discrete(expression(paste("Aspired confidence level")))
-             + ggtitle(expression("Box plots of confidence-coverage"))
              + theme(  legend.position="bottom"
                      , axis.text = element_text(colour = "black"))
              )
@@ -88,7 +87,6 @@ boxByType <- function(res) {
              + coord_flip()
              + scale_x_discrete(expression(paste("Method used for interval estimation")))
              + scale_fill_discrete(expression(paste("Aspired\nconfidence\nlevel")))
-             + ggtitle(expression("Box plots of confidence-coverage"))
              + theme(  legend.position="bottom"
                      , axis.text = element_text(colour = "black"))
              )
@@ -107,7 +105,6 @@ boxByMethod <- function(res) {
              + coord_flip()
              + scale_x_discrete(expression("Underlying type used for interval estimation"))
              + scale_fill_discrete(expression("Type of interval estimate"))
-             + ggtitle(expression("Box plots of confidence-coverage"))
              + theme(  legend.position="bottom"
                      , axis.text = element_text(colour = "black"))
              )
@@ -133,7 +130,6 @@ sctVersusH <- function(res) {
           + scale_x_continuous(expression(tau))
           + scale_y_continuous(expression("confidence - coverage"))
           + stat_smooth(method="lm", colour="black")
-          + ggtitle(expression("Scatter plot between heterogeneity and coverage"))
           + theme(  legend.position="bottom"
                   , axis.text = element_text(colour = "black"))
           )
@@ -156,7 +152,6 @@ sctVersusC <- function(res) {
           + scale_x_continuous(expression(tau))
           + scale_y_continuous(expression("confidence - coverage"))
           + stat_smooth(method="lm", colour="black") # aes(colour=type))
-          + ggtitle(expression("Scatter plot between heterogeneity and coverage"))
           + theme(  legend.position="bottom"
                   , axis.text = element_text(colour = "black"))
           )
@@ -251,7 +246,6 @@ lenBoxByType <- function(res) {
              + scale_x_discrete(name=expression("Aspired confidence level"))
              + scale_y_continuous(name=expression("Estimated mean interval width"))
              + scale_fill_discrete(expression("Type of method\nused for\ninterval estimation"))
-             + ggtitle(expression("Box plots of mean interval width"))
              + theme(  legend.position="bottom"
                      , axis.text = element_text(colour = "black"))
              )
@@ -270,7 +264,6 @@ lenBoxByMethod <- function(res) {
              + scale_x_discrete(name=expression("Aspired confidence level"))
              + scale_y_continuous(name=expression("Estimated mean interval width"))
              + scale_fill_discrete(expression("Type of method\nused for\ninterval estimation"))
-             + ggtitle(expression("Box plots of mean interval width"))
              + theme(  legend.position="bottom"
                      , axis.text = element_text(colour = "black"))
              )
@@ -316,5 +309,3 @@ lenDenByMethod <- function(res) {
              )
     return(lenp)
 }
-
-globalVariables()

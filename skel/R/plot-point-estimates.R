@@ -30,7 +30,6 @@ boxMSE <- function(res) {
              + scale_x_discrete(expression(paste("Type of estimator")))
              + scale_y_continuous(name=expression("Mean squared error"))
              + coord_flip()
-             + ggtitle(expression("Box plots of mean squared error"))
              + theme(  legend.position="none"
                      , axis.text = element_text(colour = "black"))
              )
@@ -49,7 +48,6 @@ boxBias <- function(res) {
              + coord_flip()
              + scale_x_discrete(expression(paste("Type of estimator")))
              + scale_y_continuous(name=expression("Bias"))
-             + ggtitle(expression("Box plots of bias"))
              + theme(  legend.position="none"
                      , axis.text = element_text(colour = "black"))
              )
@@ -68,7 +66,6 @@ boxSD <- function(res) {
              + coord_flip()
              + scale_x_discrete(expression(paste("Type of estimator")))
              + scale_y_continuous(name=expression("Standard deviation"))
-             + ggtitle(expression("Box plots of standard deviation"))
              + theme(  legend.position="none"
                      , axis.text = element_text(colour = "black"))
              )
@@ -102,8 +99,6 @@ sctMSE <- function(res, ...) {
                                                        line")))
           + stat_smooth(  method="lm", se=FALSE, colour="black"
                         , aes(linetype=type))
-          + ggtitle(expression(strwrap("Scatter plots of heterogeneity
-                                       and mean squared error")))
           + theme(axis.text = element_text(colour = "black"))
           )
     return(p)
@@ -132,8 +127,6 @@ sctBias <- function(res, ...) {
                                                        line")))
           + stat_smooth(method="lm", se=FALSE, colour="black",
                         aes(linetype=type))
-          + ggtitle(expression(strwrap("Scatter plots of heterogeneity
-                                       and bias")))
           + theme(axis.text = element_text(colour = "black"))
           )
     return(p)
@@ -160,11 +153,7 @@ sctSD <- function(res, ...) {
                                                        line")))
           + stat_smooth(method="lm", se=FALSE, colour="black",
                         aes(linetype=type))
-          + ggtitle(expression(strwrap("Scatter plots of heterogeneity
-                                       and standard deviation")))
           + theme(axis.text = element_text(colour = "black"))
           )
     return(p)
 }
-
-globalVariables()

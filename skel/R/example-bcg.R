@@ -79,7 +79,6 @@ plotStudySizes <- function(dat) {
            + scale_y_continuous(expression("Total number of subjects"))
            + coord_flip()
            + theme(axis.text = element_text(colour = "black"))
-           + ggtitle("Differences in total study size")
            )
 }
 
@@ -96,7 +95,6 @@ plotStudyUnbalance <- function(dat) {
            + scale_y_continuous(expression(frac(v-neg(v), v+neg(v))))
            + coord_flip()
            + theme(axis.text = element_text(colour = "black"))
-           + ggtitle("Differences in treatment assignments")
            )
 }
 
@@ -118,9 +116,6 @@ plotStudyForest <- function(dat) {
            + scale_y_continuous("logarithm of relative risk")
            + coord_flip()
            + theme(axis.text = element_text(colour = "black"))
-           + ggtitle(expression(strwrap("Forest plot of 95% confidence
-                                        intervals for the log relative
-                                        risk")))
            )
 }
 
@@ -198,5 +193,3 @@ plotIntervalEstimates <- function (cnf) {
     + coord_flip()
     + facet_grid(confidence ~ .))
 }
-
-globalVariables()
