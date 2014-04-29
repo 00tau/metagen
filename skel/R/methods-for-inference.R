@@ -659,9 +659,9 @@ intervalEstimates_OneSgnf <- function (  y    # study responses
     classic    <- makeConfInts(sgn=sgnf, pst=By, fct=Cfct
                        , crt=qnorm, "unadjusted likelihood")
     knappAdjst <- makeConfInts(sgn=sgnf, pst=By, fct=Afct
-                       , crt=crt, "Knapp/Hartung adjustment")
+                       , crt=crt, "Knapp-Hartung adjustment")
     knappAdhoc <- makeConfInts(sgn=sgnf, pst=By, fct=Kfct
-                       , crt=crt, "Knapp/Hartung ad hoc improvement")
+                       , crt=crt, "Knapp-Hartung ad hoc improvement")
     confints   <- rbind(classic, knappAdjst, knappAdhoc)
     confints$h <- names(h)
     return(confints)
