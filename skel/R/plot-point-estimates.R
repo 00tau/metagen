@@ -20,6 +20,8 @@
 
 #' Plotting performance: Box plots for mean squared error
 #'
+#' Box plots for mean squared error.
+#'
 #' @param res The collected results from a computer experiment.
 #' @return A plot object.
 #' @export
@@ -38,6 +40,8 @@ boxMSE <- function(res) {
 
 #' Plotting performance: Box plots for bias
 #'
+#' Box plots for the bias.
+#'
 #' @param res The collected results from a computer experiment.
 #' @return A plot object.
 #' @export
@@ -55,6 +59,8 @@ boxBias <- function(res) {
 }
 
 #' Plotting performance: Box plots for standard deviation
+#'
+#' Box plots for standard deviation.
 #'
 #' @param res The collected results from a computer experiment.
 #' @return A plot object.
@@ -78,11 +84,12 @@ boxSD <- function(res) {
 
 #' Plotting performance: Scatter plots against heterogeneity
 #'
+#' Scatter plots of heterogeneity and mean squared error.
+#'
 #' @param res The collected results from a computer experiment.
-#' @param ... further argumets to scale_y_continuous
 #' @return A plot object.
 #' @export
-sctMSE <- function(res, ...) {
+sctMSE <- function(res) {
     p <- (  ggplot(res, aes(h, mse))
           + geom_point(aes(shape=type, colour=type))
           + geom_hline(yintercept=0, size=.3, linetype=4)
@@ -100,11 +107,12 @@ sctMSE <- function(res, ...) {
 
 #' Plotting performance: Scatter plots against heterogeneity
 #'
+#' Scatter plots of heterogeneity and bias.
+#'
 #' @param res The collected results from a computer experiment.
-#' @param ... further argumets to scale_y_continuous
 #' @return A plot object.
 #' @export
-sctBias <- function(res, ...) {
+sctBias <- function(res) {
     p <- (  ggplot(res, aes(h, bias))
           + geom_point(aes(shape=type, colour=type))
           + geom_hline(yintercept=0, size=.3, linetype=4)
@@ -122,11 +130,12 @@ sctBias <- function(res, ...) {
 
 #' Plotting performance: Scatter plots against heterogeneity
 #'
+#' Scatter plots of heterogeneity and standard deviation.
+#'
 #' @param res The collected results from a computer experiment.
-#' @param ... further argumets to scale_y_continuous
 #' @return A plot object.
 #' @export
-sctSD <- function(res, ...) {
+sctSD <- function(res) {
     p <- (  ggplot(res, aes(h, sqrt(variance)))
           + geom_point(aes(shape=type, colour=type))
           + geom_hline(yintercept=0, size=.3, linetype=4)

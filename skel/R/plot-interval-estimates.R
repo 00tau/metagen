@@ -58,7 +58,7 @@ plotCoefficientInterval <- function(cnfr) {
 
 #' Plotting performance: Box plots for target value confidence-coverage
 #'
-#' @param res : The collected results from a computer experiment.
+#' @param res The collected results from a computer experiment.
 #' @return A plot object.
 #' @export
 boxByConfidence <- function(res) {
@@ -77,7 +77,7 @@ boxByConfidence <- function(res) {
 
 #' Plotting performance: Box plots for target value confidence-coverage
 #'
-#' @param res : The collected results from a computer experiment.
+#' @param res The collected results from a computer experiment.
 #' @return A plot object.
 #' @export
 boxByType <- function(res) {
@@ -96,7 +96,7 @@ boxByType <- function(res) {
 
 #' Plotting performance: Box plots for target value confidence-coverage
 #'
-#' @param res : The collected results from a computer experiment.
+#' @param res The collected results from a computer experiment.
 #' @return A plot object.
 #' @export
 boxByMethod <- function(res) {
@@ -119,8 +119,7 @@ boxByMethod <- function(res) {
 
 #' Plotting performance: Scatter plot against heterogeneity
 #'
-#' @param res : The collected interval results from a computer
-#' experiment.
+#' @param res The collected interval results from a computer experiment.
 #' @return A plot object.
 #' @export
 sctVersusH <- function(res) {
@@ -140,7 +139,7 @@ sctVersusH <- function(res) {
 
 #' Plotting performance: Scatter plot against heterogeneity
 #'
-#' @param res : The collected results from a computer experiment.
+#' @param res The collected results from a computer experiment.
 #' @return A plot object.
 #' @export
 sctVersusC <- function(res) {
@@ -166,7 +165,7 @@ sctVersusC <- function(res) {
 
 #' Plotting performance: Scatter plot against heterogeneity
 #'
-#' @param res : The collected results from a computer experiment.
+#' @param res The collected results from a computer experiment.
 #' @return A plot object.
 #' @export
 sdmByType <- function(res) {
@@ -182,7 +181,7 @@ sdmByType <- function(res) {
 
 #' Plotting performance: Scatter plot against heterogeneity
 #'
-#' @param res : The collected results from a computer experiment.
+#' @param res The collected results from a computer experiment.
 #' @return A plot object.
 #' @export
 sdmByMethod <- function(res) {
@@ -202,7 +201,7 @@ sdmByMethod <- function(res) {
 
 #' Plotting performance: Scatter plot against heteroscedasticity
 #'
-#' @param res : The collected results from a computer experiment.
+#' @param res The collected results from a computer experiment.
 #' @return A plot object.
 #' @export
 sdsByType <- function(res) {
@@ -218,7 +217,7 @@ sdsByType <- function(res) {
 
 #' Plotting performance: Scatter plot against heteroscedasticity
 #'
-#' @param res : The collected results from a computer experiment.
+#' @param res The collected results from a computer experiment.
 #' @return A plot object.
 #' @export
 sdsByMethod <- function(res) {
@@ -238,7 +237,7 @@ sdsByMethod <- function(res) {
 
 #' Plotting performance: Box plot of mean width
 #'
-#' @param res : The collected results from a computer experiment.
+#' @param res The collected results from a computer experiment.
 #' @return A plot object.
 #' @export
 lenBoxByType <- function(res) {
@@ -256,7 +255,7 @@ lenBoxByType <- function(res) {
 
 #' Plotting performance: Box plot of mean width
 #'
-#' @param res : The collected results from a computer experiment.
+#' @param res The collected results from a computer experiment.
 #' @return A plot object.
 #' @export
 lenBoxByMethod <- function(res) {
@@ -279,7 +278,7 @@ lenBoxByMethod <- function(res) {
 #' Plotting performance: Density estimate of mean width
 #'
 #' By type.
-#' @param res : The collected results from a computer experiment.
+#' @param res The collected results from a computer experiment.
 #' @return A plot object.
 #' @export
 lenDenByType <- function(res) {
@@ -297,7 +296,7 @@ lenDenByType <- function(res) {
 #' Plotting performance: Density estimate of mean width
 #'
 #' By method.
-#' @param res : The collected results from a computer experiment.
+#' @param res The collected results from a computer experiment.
 #' @return A plot object.
 #' @export
 lenDenByMethod <- function(res) {
