@@ -62,13 +62,13 @@ plotCoefficientInterval <- function(cnfr) {
 #' @return A plot object.
 #' @export
 boxByConfidence <- function(res) {
-    boxp <- (  ggplot(res, aes(factor(confidence, ordered=T),
-                               confidence-coverage))
+    boxp <- (  ggplot(res, aes(factor(confidence, ordered=T), confidence-coverage))
              + geom_boxplot(aes(fill=type))
              + geom_hline(yintercept=0, size=.42, linetype=4)
              + coord_flip()
              + scale_fill_discrete(expression("Type of method\nused for\ninterval estimation"))
              + scale_x_discrete(expression(paste("Aspired confidence level")))
+             + ylab(expression("Confidence level - Coverage probability"))
              + theme(  legend.position="bottom"
                      , axis.text = element_text(colour = "black"))
              )
@@ -87,6 +87,7 @@ boxByType <- function(res) {
              + coord_flip()
              + scale_x_discrete(expression(paste("Method used for interval estimation")))
              + scale_fill_discrete(expression(paste("Aspired\nconfidence\nlevel")))
+             + ylab(expression("Confidence level - Coverage probability"))
              + theme(  legend.position="bottom"
                      , axis.text = element_text(colour = "black"))
              )
@@ -105,6 +106,7 @@ boxByMethod <- function(res) {
              + coord_flip()
              + scale_x_discrete(expression("Underlying type used for interval estimation"))
              + scale_fill_discrete(expression("Type of interval estimate"))
+             + ylab(expression("Confidence level - Coverage probability"))
              + theme(  legend.position="bottom"
                      , axis.text = element_text(colour = "black"))
              )
@@ -128,7 +130,7 @@ sctVersusH <- function(res) {
           + scale_colour_discrete(expression("Aspired confidence level"))
           + geom_hline(yintercept=0, size=.42, linetype=3)
           + scale_x_continuous(expression(tau))
-          + scale_y_continuous(expression("confidence - coverage"))
+          + ylab(expression("Confidence level - Coverage probability"))
           + stat_smooth(method="lm", colour="black")
           + theme(  legend.position="bottom"
                   , axis.text = element_text(colour = "black"))
@@ -150,7 +152,7 @@ sctVersusC <- function(res) {
                                   )
           + geom_hline(yintercept=0, size=.42, linetype=3)
           + scale_x_continuous(expression(tau))
-          + scale_y_continuous(expression("confidence - coverage"))
+          + ylab(expression("Confidence level - Coverage probability"))
           + stat_smooth(method="lm", colour="black") # aes(colour=type))
           + theme(  legend.position="bottom"
                   , axis.text = element_text(colour = "black"))
@@ -172,7 +174,7 @@ sdmByType <- function(res) {
              + geom_point(alpha=5/8, aes(colour=type))
              + geom_hline(yintercept=0, size=.3)
              + scale_x_continuous(expression(bar(delta)))
-             + scale_y_continuous(expression("confidence - coverage"))
+             + ylab(expression("Confidence level - Coverage probability"))
              + estColourPalette
              + facet_grid(confidence ~ method))
     return(sctp)
@@ -188,7 +190,7 @@ sdmByMethod <- function(res) {
              + geom_point(alpha=5/8, aes(colour=factor(confidence)))
              + geom_hline(yintercept=0, size=.3)
              + scale_x_continuous(expression(bar(delta)))
-             + scale_y_continuous(expression("confidence - coverage"))
+             + ylab(expression("Confidence level - Coverage probability"))
              + facet_grid(. ~ method)
              + cnfColourPalette)
     return(sdmp)
@@ -208,7 +210,7 @@ sdsByType <- function(res) {
              + geom_point(alpha=5/8, aes(colour=type))
              + geom_hline(yintercept=0, size=.3)
              + scale_x_continuous(expression(sd(delta)))
-             + scale_y_continuous(expression("confidence - coverage"))
+             + ylab(expression("Confidence level - Coverage probability"))
              + estColourPalette
              + facet_grid(confidence ~ method))
     return(sctp)
@@ -224,7 +226,7 @@ sdsByMethod <- function(res) {
              + geom_point(alpha=5/8, aes(colour=factor(confidence)))
              + geom_hline(yintercept=0, size=.3)
              + scale_x_continuous(expression(sd(delta)))
-             + scale_y_continuous(expression("confidence - coverage"))
+             + ylab(expression("Confidence level - Coverage probability"))
              + facet_grid(. ~ method)
              + cnfColourPalette)
     return(sdsp)
