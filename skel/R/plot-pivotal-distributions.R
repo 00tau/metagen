@@ -16,8 +16,8 @@
 
 #' Pivotal distributions: Extract pivots for heterogeneity
 #'
-#' @param p0 pivotal stream without adjustment
-#' @param p1 pivatal stream with adjustment
+#' @param p0 pivotal stream without adjustment.
+#' @param p1 pivatal stream with adjustment.
 #' @examples
 #' bcg   <- bcgVaccineData()
 #' bcg_y <- bcg$logrisk
@@ -76,8 +76,8 @@ makePivotalData <- function (p) {
 
 #' Pivotal distributions: Extract pivots for regression coefficients
 #'
-#' @param p0 pivotal stream without adjustment
-#' @param p1 pivatal stream with adjustment
+#' @param p0 pivotal stream without adjustment.
+#' @param p1 pivatal stream with adjustment.
 #' @examples
 #' bcg   <- bcgVaccineData()
 #' bcg_y <- bcg$logrisk
