@@ -385,7 +385,7 @@ metagenGeneralised <- function (  y      # k-vector of responses.
                                 , sgnf   # vector of significance levels
                                 , s=NULL # k-vector of study responses
                                 , n      # draws of pivotal distribution
-                            , method=list("univariate", "multivariate")
+                                , method=list("univariate", "multivariate")
                                 , adjusted=FALSE # TRUE or FALSE
                                 ) {
     if (is.vector(x)) {x <- as.matrix(x, ncol=1)}
@@ -659,7 +659,7 @@ intervalEstimates_OneSgnf <- function (  y    # study responses
     knappAdhoc <- makeConfInts(sgn=sgnf, pst=By, fct=Kfct
                        , crt=crt, "Knapp-Hartung ad hoc improvement")
     confints   <- rbind(classic, knappAdjst, knappAdhoc)
-    confints$h <- names(h)
+    confints$h <- names(h) # Don't need this line
     return(confints)
 }
 
@@ -760,6 +760,8 @@ hConfidence <- function (  y    # k-vector of study responses
 #' c1 <- metareg(y=bcg_y, d=bcg_d, x=bcg_x, sgnf=0.025)
 #' c2 <- metareg(y=bcg_y, d=bcg_d, x=bcg_x, sgnf=sgnf_lev)
 #'
+#' # When performing a meta analysis, provide the function
+#' # with a vector of 1s.
 #' if (!all(names(c1) == names(metagenEmpty()))) stop("Name clash")
 #' if (!all(names(c2) == names(metagenEmpty()))) stop("Name clash")
 #' @export
@@ -768,6 +770,7 @@ metareg <- function (  y    # k-vector of study responses
                      , x    # design k-p-matrix
                      , sgnf # significance levels
                      ) {
+    if (is.vector(x)) {x <- as.matrix(x, ncol=1)}
     h_dat  <- hEstimates(y,d,x)
     # pointr may include an empty data frame for NA h-estimates.
     pointr <- regressionEstimates(y,d,h_dat,x)
