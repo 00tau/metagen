@@ -55,7 +55,7 @@ designY <- function(  n # resolution
     ps <- makeParamSet(  makeNumericParam("h" , lower=h_bounds[1],
                                           upper=h_bounds[2])
                        , makeNumericVectorParam(  "d"
-                                                , len=dim(x)[1]
+                                                , length=dim(x)[1]
                                                 , lower=d_bounds[1]
                                                 , upper=d_bounds[2]))
     return(generateDesign(n=n, ps, fun=maximinLHS))
@@ -108,11 +108,11 @@ designD <- function(  n # resolution
     ps <- makeParamSet(  makeNumericParam("h" , lower=h_bounds[1],
                                           upper=h_bounds[2])
                        , makeNumericVectorParam(  "d"
-                                                , len=dim(x)[1]
+                                                , length=dim(x)[1]
                                                 , lower=d_bounds[1]
                                                 , upper=d_bounds[2]))
     psSizes  <- makeParamSet(makeIntegerVectorParam(  "s"
-                                                , len=dim(x)[1]
+                                                , length=dim(x)[1]
                                                 , lower=s_bounds[1]
                                                 , upper=s_bounds[2]))
     return(cbind(  generateDesign(n=n, ps, fun=maximinLHS)
@@ -171,11 +171,11 @@ designB <- function(  n
                                           , lower=h_bounds[1]
                                           , upper=h_bounds[2])
                        , makeNumericVectorParam(  "a"
-                                                , len=dim(x)[1]
+                                                , length=dim(x)[1]
                                                 , lower=a_bounds[1]
                                                 , upper=a_bounds[2]))
     psSizes  <- makeParamSet(makeIntegerVectorParam(  "s"
-                                                , len=dim(x)[1]
+                                                , length=dim(x)[1]
                                                 , lower=s_bounds[1]
                                                 , upper=s_bounds[2]))
     return(cbind(  generateDesign(n=n, ps, fun=maximinLHS)
